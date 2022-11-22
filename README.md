@@ -8,7 +8,7 @@ Usage of the application is as follows:
 **With command line parameters:**
 ---------------------------------
 Use the following syntax:
-ng_pragma_builder PEPath PragmaPath PEName
+*ng_pragma_builder PEPath PragmaPath PEName*
 
 PEPath: the path of the original PE image (typically a DLL or EXE file compatible with 32 or 64 bit Windows)
 
