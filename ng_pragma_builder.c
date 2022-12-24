@@ -57,7 +57,7 @@ void ParseExportTable(ULONG_PTR Address, DWORD ExportTableRawToRVAOffset, DWORD 
 		Ordinal = i + ExportDirectory->Base;
 		if(!IsOrdinalNamed[i] && *FunctionPtr != 0x0)
 		{
-			fprintf(Pragma, "\n#pragma comment(linker, \"/export:=%s.#%d,@%d,NONAME\")", DllName, Ordinal, Ordinal);
+			fprintf(Pragma, "\n#pragma comment(linker, \"/export:%d=%s.#%d,@%d,NONAME\")", Ordinal, DllName, Ordinal, Ordinal);
 		}
 		++FunctionPtr;
 	}
