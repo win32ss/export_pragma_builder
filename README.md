@@ -23,8 +23,12 @@ This option is desireable for batch operations.
 
 The application will prompt for each parameter individually.
 
-**Important note**
+**Important notes**
 --------------------------------
+WARNING: if the target DLL is to be loaded by the Unicows PFN loader (which is even part of the VS2010 setup.exe even though VS2010 is far from supporting Windows 9x), it will not work.
+The Unicows equivalent to GetProcAddress will ignore any export table entries using an export forward string and return NULL for such a function. There are other non-Unicows cases
+that are also problematic. A tool using proper imports is being tested at this time.
+
 Both x86 and x64 builds of the application are available. Usage of the x86 version on an x64 system is not recommended due to 
 WOW64 file redirection, which redirects file access from 32 bit applications to 32 bit system directories such as SysWOW64, when
 64 bit system directories such as System32 are specified.
